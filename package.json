@@ -31,6 +31,9 @@
     "minify-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.min.css --output-style compressed",
     "map-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css --source-map true"
   },
+  "engines": {
+    "node": "12.16.1"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
