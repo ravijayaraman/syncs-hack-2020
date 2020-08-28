@@ -29,7 +29,7 @@ import 'assets/demo/nucleo-icons-page-styles.css?v=1.4.0';
 // import Index from 'views/Index.js';
 import NucleoIcons from 'views/NucleoIcons.js';
 // import LoginPage from 'views/examples/LoginPage.js';
-import { LandingPage, LoginPage, ProfilePage } from 'views';
+import { LandingPage, LoginPage, ProfilePage, RegisterPage } from 'views';
 // import ProfilePage from 'views/examples/ProfilePage.js';
 
 const hist = createBrowserHistory();
@@ -49,6 +49,10 @@ ReactDOM.render(
       <Route
         path="/profile-page"
         render={(props) => <ProfilePage {...props} />}
+      />
+      <Route
+        path="/register-page"
+        render={(props) => <RegisterPage {...props} />}
       />
       <Route path="/login-page" render={(props) => <LoginPage {...props} />} />
       <Redirect to="/landing-page" />
