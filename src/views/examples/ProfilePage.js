@@ -2,7 +2,7 @@ import React from "react";
 
 // reactstrap components
 import {
-  Card, CardTitle, CardText, CardDeck,
+  Card, CardImg, CardTitle, CardText, CardDeck,
   CardBody,
   Button,
   NavItem,
@@ -48,7 +48,8 @@ function ProfilePage() {
             <Row>
               <Col className="ml-auto mr-auto" md="10">
                 <CardDeck>
-                <Card className="mb-4" style={{'min-width': '15rem',}}>
+                  <Card className="mb-4" style={{'min-width': '15rem',}}>
+                    <CardImg top width="100%" src={require("assets/img/ryan.jpg")} alt="Card image cap" />
                     <CardBody>
                       <CardTitle>Card title</CardTitle>
                       <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
