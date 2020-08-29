@@ -82,7 +82,7 @@ function ExamplesNavbar() {
               <NavItem>
                 <NavLink to="/leaderboard-list">
                   <Link to="/leaderboard-list">
-                    <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                    <i className="now-ui-icons sport_trophy"></i>
                     <p>Leaderboard</p>
                   </Link>
                 </NavLink>
