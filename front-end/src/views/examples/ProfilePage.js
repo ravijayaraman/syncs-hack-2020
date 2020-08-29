@@ -54,7 +54,6 @@ function ProfilePage() {
                       <CardTitle>Brand new lawn mower</CardTitle>
                       <CardText> Owned By - Ryan</CardText>
                       <CardText style={{'height': '7rem',}}>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
-                      <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4 rounded" style={{'min-width': '15rem',}}>
@@ -62,7 +61,6 @@ function ProfilePage() {
                     <CardBody>
                       <CardTitle>Barely used drill</CardTitle>
                       <CardText style={{'height': '7rem',}}>Drill is good drill, come and get it.</CardText>
-                      <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
@@ -70,7 +68,6 @@ function ProfilePage() {
                     <CardBody>
                       <CardTitle>Kayak</CardTitle>
                       <CardText style={{'height': '7rem',}}>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
-                      <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
@@ -78,7 +75,6 @@ function ProfilePage() {
                     <CardBody>
                       <CardTitle>Old but reliable drill</CardTitle>
                       <CardText style={{'height': '7rem',}}>Drill is good drill, come and get it.</CardText>
-                      <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
@@ -86,7 +82,6 @@ function ProfilePage() {
                     <CardBody>
                       <CardTitle>Kayak, used once</CardTitle>
                       <CardText style={{'height': '7rem',}}>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
-                      <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
@@ -94,7 +89,6 @@ function ProfilePage() {
                     <CardBody>
                       <CardTitle>New Lawn Mower</CardTitle>
                       <CardText style={{'height': '7rem',}}>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
-                      <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                 </CardDeck>
