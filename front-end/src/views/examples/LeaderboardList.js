@@ -57,21 +57,21 @@ function LeaderboardList() {
             <div className="wrapper">
                 <LandingPageHeader />
                 <div className="section">
-                    <Container>
+                    <Container className="container">
                         <div>
                             <h2>Leaderboard</h2>
                             <Container>
                             <h2>Our top communities</h2>
-                            <LeaderboardCard imgUrl={require("assets/img/bicycle.png")} name={"Townhall community"} position={"1"} location={"Townhall, Sydney"} description={"Small community based in the city center"} arrow={require("assets/img/first-trophy.png")}/>
-                            <LeaderboardCard imgUrl={require("assets/img/mixer-blender.png")} name={"Blue Mountains community"} position={"2"} location={"Katoomba, Sydney"} description={"Small community based in the mountain regions of Katoomba"} arrow={require("assets/img/second-trophy.png")}/>
-                            <LeaderboardCard imgUrl={require("assets/img/camping-tent.png")} name={"Rosebary relief"} position={"3"} location={"Rosebary, Sydney"} description={"Small community based near airport"} arrow={require("assets/img/third-trophy.png")}/>
+                            <LeaderboardCard imgUrl={require("assets/img/bicycle.png")} name={"Townhall community"} position={"13550 points"} location={"Townhall, Sydney"} description={"Small community based in the city center"} arrow={require("assets/img/first-trophy.png")}/>
+                            <LeaderboardCard imgUrl={require("assets/img/mixer-blender.png")} name={"Blue Mountains community"} position={"12740 points"} location={"Katoomba, Sydney"} description={"Small community based in the mountain regions of Katoomba"} arrow={require("assets/img/second-trophy.png")}/>
+                            <LeaderboardCard imgUrl={require("assets/img/camping-tent.png")} name={"Rosebary relief"} position={"9080 points"} location={"Rosebary, Sydney"} description={"Small community based near airport"} arrow={require("assets/img/third-trophy.png")}/>
 
                         </Container>
-                            <Container>
+                            <Container className="container">
                                 <h2>Growing communities</h2>
-                                <LeaderboardCard imgUrl={require("assets/img/bicycle.png")} name={"Townhall community"} position={"1"} location={"Port Stephen, Sydney"} description={"Impact around the region of Port Stephen, growth increase of 300%"} arrow={require("assets/img/gold-stars.png")}/>
-                                <LeaderboardCard imgUrl={require("assets/img/mixer-blender.png")} name={"Blue Mountains community"} position={"2"} location={"Newcastle, Sydney"} description={"Reached out to help other communities affected by busfire"} arrow={require("assets/img/children-award.png")}/>
-                                <LeaderboardCard imgUrl={require("assets/img/camping-tent.png")} name={"Rosebary relief"} position={"3"} location={"Gosford, Sydney"} description={"Reached out to all schools and tutored children for free, provided essentials to families facing difficulty"} arrow={require("assets/img/bushfire-relief-badge.png")}/>
+                                <LeaderboardCard imgUrl={require("assets/img/bicycle.png")} name={"Townhall community"} position={"3400 points"} location={"Port Stephen, Sydney"} description={"Impact around the region of Port Stephen, growth increase of 300%"} arrow={require("assets/img/gold-stars.png")}/>
+                                <LeaderboardCard imgUrl={require("assets/img/mixer-blender.png")} name={"Blue Mountains community"} position={"3150 points"} location={"Newcastle, Sydney"} description={"Reached out to help other communities affected by busfire"} arrow={require("assets/img/children-award.png")}/>
+                                <LeaderboardCard imgUrl={require("assets/img/camping-tent.png")} name={"Rosebary relief"} position={"2790 points"} location={"Gosford, Sydney"} description={"Reached out to all schools and tutored children for free, provided essentials to families facing difficulty"} arrow={require("assets/img/bushfire-relief-badge.png")}/>
 
                             </Container>
                             </div>
