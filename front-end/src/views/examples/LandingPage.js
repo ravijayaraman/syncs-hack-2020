@@ -23,7 +23,7 @@ import ExamplesNavbar from 'components/Navbars/ExamplesNavbar.js';
 import LandingPageHeader from 'components/Headers/LandingPageHeader.js';
 import DefaultFooter from 'components/Footers/DefaultFooter.js';
 import { OfferCard, OffersByCategory } from 'components';
-
+import axios from 'axios';
 const LandingPage = (props) => {
   const [firstFocus, setFirstFocus] = useState(false);
   // creates the state
@@ -40,13 +40,16 @@ const LandingPage = (props) => {
   useEffect(() => {
     // setIsLoading(true);
 
-    // fetch(API + '/' + props.match.params.id)
-    //   .then((response) => response.json())
-    //   .then((json) => {
-    //     setOffers(json);
-    //     console.log(json);
-    //     // setIsLoading(false);
-    //   });
+    axios.get(API).then((json) => {
+      const data = json.data;
+
+      console.log(data);
+      if (data.success) {
+        setOffers(data.data);
+        console.log(data.data);
+      }
+      // setIsLoading(false);
+    });
 
     document.body.classList.add('landing-page');
     document.body.classList.add('sidebar-collapse');
@@ -66,10 +69,6 @@ const LandingPage = (props) => {
 
   return (
     <>
-      {/* {offers.map((o) => (
-        <Link to={`/prod-detail/${o.id}`}>asdf</Link>
-      ))} */}
-
       <ExamplesNavbar />
       <div className="wrapper">
         <LandingPageHeader />
@@ -77,17 +76,20 @@ const LandingPage = (props) => {
           <Container>
             <h3 className="title">Electronics</h3>
             <h5 className="description">Electronics</h5>
-            <OffersByCategory />
-          </Container>
-          <Container>
-            <h3 className="title">Electronics</h3>
-            <h5 className="description">Electronics</h5>
-            <OffersByCategory />
-          </Container>
-          <Container>
-            <h3 className="title">Home</h3>
-            <h3 className="description">Home improvement</h3>
-            <OffersByCategory />
+            <Row>
+              <Col md="12">
+                <CardDeck>
+                  {offers.map((offer) => (
+                    <OfferCard
+                      id={offer.id}
+                      photo={offer.photo}
+                      title={offer.title}
+                      description={offer.description}
+                    />
+                  ))}
+                </CardDeck>
+              </Col>
+            </Row>
           </Container>
         </div>
         <DefaultFooter />
