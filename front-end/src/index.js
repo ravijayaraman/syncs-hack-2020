@@ -35,6 +35,7 @@ import {
   ProfilePage,
   RegisterPage,
   OfferList,
+  ProductDetail,
   RequestList,
   LeaderboardList,
 } from 'views';
@@ -65,6 +66,7 @@ ReactDOM.render(
       />
       <Route path="/login-page" render={(props) => <LoginPage {...props} />} />
       <Route path="/have-list" render={(props) => <OfferList {...props} />} />
+      <Route path="/prod-detail" render={(props) => <ProductDetail {...props} />} />
       <Route path="/request-list" render={(props) => <RequestList {...props} />} />
       <Route path="/leaderboard-list" render={(props) => <LeaderboardList {...props} />} />
       <Redirect to="/landing-page" />

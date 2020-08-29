@@ -5,5 +5,6 @@ import RegisterPage from './examples/RegisterPage.js';
 import OfferList from './examples/OfferList.js'
 import RequestList from './examples/RequestList.js'
 import LeaderboardList from './examples/LeaderboardList.js'
+import ProductDetail from './examples/ProductDetail.js'
 
-export { LandingPage, LoginPage, ProfilePage, RegisterPage, OfferList, RequestList, LeaderboardList };
+export { LandingPage, LoginPage, ProfilePage, RegisterPage, OfferList, RequestList, LeaderboardList,ProductDetail };
