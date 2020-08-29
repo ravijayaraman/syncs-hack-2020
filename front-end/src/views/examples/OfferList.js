@@ -80,7 +80,7 @@ function OfferList() {
                 </Modal>
             </div>
             <div>
-                <h2>Category</h2>
+                <h2>Borrow from Your Community</h2>
                 <Nav tabs>
                     <NavItem>
                         <NavLink
