@@ -104,10 +104,10 @@ function ExamplesNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/request-list">
-                <Link to="/request-list">
+                <NavLink to="/create-offer">
+                <Link to="/create-offer">
                 <i className="now-ui-icons design_bullet-list-67"></i>
-                <p>Leaderboard</p>
+                <p>Create Offer</p>
                 </Link>
              </NavLink>
           </NavItem>
