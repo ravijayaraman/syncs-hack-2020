@@ -54,7 +54,7 @@ function ExamplesNavbar() {
           <div className="navbar-translate">
             <NavbarBrand target="_blank" id="navbar-brand">
               <NavLink>
-                <Link to="/">Food Genie</Link>
+                <Link to="/">CommShare</Link>
               </NavLink>
 
               {/* <Link to="/about">About</Link> */}
