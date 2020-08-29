@@ -65,7 +65,6 @@ function LandingPage() {
           <Container>
             <h3 className="title">Home</h3>
             <h3 className="description">Home improvement</h3>
-
             <OffersByCategory />
           </Container>
         </div>
