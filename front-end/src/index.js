@@ -41,56 +41,31 @@ import {
   CreateOffer,
 } from 'views';
 import LeaderboardCard from './components/LeaderboardCard';
-import { UserProvider } from 'components';
+import { PrivateRoute } from 'components';
 // import ProfilePage from 'views/examples/ProfilePage.js';
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
-  <UserProvider>
-    <Router history={hist}>
-      <Switch>
-        {/* <Route path="/index" render={(props) => <Index {...props} />} /> */}
-        <Route
-          path="/nucleo-icons"
-          render={(props) => <NucleoIcons {...props} />}
-        />
-        <Route
-          path="/landing-page"
-          render={(props) => <LandingPage {...props} />}
-        />
-        <Route
-          path="/profile-page"
-          render={(props) => <ProfilePage {...props} />}
-        />
-        <Route
-          path="/register-page"
-          render={(props) => <RegisterPage {...props} />}
-        />
-        <Route
-          path="/login-page"
-          render={(props) => <LoginPage {...props} />}
-        />
-        <Route path="/have-list" render={(props) => <OfferList {...props} />} />
-        <Route
-          path="/prod-detail/:id"
-          render={(props) => <ProductDetail {...props} />}
-        />
-        <Route
-          path="/request-list"
-          render={(props) => <RequestList {...props} />}
-        />
-        <Route
-          path="/leaderboard-list"
-          render={(props) => <LeaderboardList {...props} />}
-        />
-        <Route
-          path="/create-offer"
-          render={(props) => <CreateOffer {...props} />}
-        />
-        <Redirect to="/landing-page" />
-      </Switch>
-    </Router>
-  </UserProvider>,
+  <Router history={hist}>
+    <Switch>
+      {/* <Route path="/index" render={(props) => <Index {...props} />} /> */}
+      <Route
+        path="/nucleo-icons"
+        component={NucleoIcons}
+        // render={(props) => <NucleoIcons {...props} />}
+      />
+      <Route path="/landing-page" component={LandingPage} />
+      <PrivateRoute path="/profile-page" component={ProfilePage} />
+      <Route path="/register" component={RegisterPage} />
+      <Route path="/login" component={LoginPage} />
+      <Route path="/have-list" component={OfferList} />
+      <Route path="/prod-detail" component={ProductDetail} />
+      <Route path="/request-list" component={RequestList} />
+      <Route path="/leaderboard-list" component={LeaderboardList} />
+      <PrivateRoute path="/create-offer" component={CreateOffer} />
+      <Redirect to="/landing-page" />
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );

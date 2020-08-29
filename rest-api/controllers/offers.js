@@ -10,12 +10,12 @@ const geocoder = require('../utils/geocoder');
 // @access    Public
 exports.getOffers = asyncHandler(async (req, res, next) => {
   if (req.params.categoryId) {
-    const courses = await Offer.find({ category: req.params.categoryId });
+    const offers = await Offer.find({ category: req.params.categoryId });
 
     return res.status(200).json({
       success: true,
-      count: courses.length,
-      data: courses,
+      count: offers.length,
+      data: offers,
     });
   } else {
     res.status(200).json(res.advancedResults);
