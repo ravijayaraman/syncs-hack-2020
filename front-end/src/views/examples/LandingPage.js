@@ -24,16 +24,29 @@ import LandingPageHeader from 'components/Headers/LandingPageHeader.js';
 import DefaultFooter from 'components/Footers/DefaultFooter.js';
 import { OfferCard, OffersByCategory } from 'components';
 
-function LandingPage() {
+const LandingPage = (props) => {
   const [firstFocus, setFirstFocus] = useState(false);
+  // creates the state
+  // Create set method
+
   const [lastFocus, setLastFocus] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  const API = 'http://localhost:5000/api/v1/offers';
+  const [offers, setOffers] = useState([]);
+
+  //Called when Component is Loaded
   useEffect(() => {
-    fetch(
-      'https://my-json-server.typicode.com/ravijayaraman/syncs-hack-2020/posts'
-    )
-      .then((response) => response.json())
-      .then((json) => console.log(json));
+    // setIsLoading(true);
+
+    // fetch(API + '/' + props.match.params.id)
+    //   .then((response) => response.json())
+    //   .then((json) => {
+    //     setOffers(json);
+    //     console.log(json);
+    //     // setIsLoading(false);
+    //   });
 
     document.body.classList.add('landing-page');
     document.body.classList.add('sidebar-collapse');
@@ -46,8 +59,17 @@ function LandingPage() {
     };
   }, []);
 
+  //Workflow
+  //1. create state and method using useState
+  //2. Fetch on load. using useEffect
+  //3. map the data into HTML
+
   return (
     <>
+      {/* {offers.map((o) => (
+        <Link to={`/prod-detail/${o.id}`}>asdf</Link>
+      ))} */}
+
       <ExamplesNavbar />
       <div className="wrapper">
         <LandingPageHeader />
@@ -72,6 +94,6 @@ function LandingPage() {
       </div>
     </>
   );
-}
+};
 
 export default LandingPage;
