@@ -104,6 +104,14 @@ function ExamplesNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink to="/create-offer">
+                <Link to="/create-offer">
+                <i className="now-ui-icons design_bullet-list-67"></i>
+                <p>Create Offer</p>
+                </Link>
+             </NavLink>
+          </NavItem>
+              <NavItem>
                 <NavLink to="/profile-page" id="twitter-tooltip">
                   <Link to="/profile-page">
                     <i class="far fa-user-circle fa-2x"></i>

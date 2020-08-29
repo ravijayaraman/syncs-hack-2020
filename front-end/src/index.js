@@ -38,6 +38,7 @@ import {
   ProductDetail,
   RequestList,
   LeaderboardList,
+  CreateOffer,
 } from 'views';
 import LeaderboardCard from "./components/LeaderboardCard";
 // import ProfilePage from 'views/examples/ProfilePage.js';
@@ -69,6 +70,7 @@ ReactDOM.render(
       <Route path="/prod-detail" render={(props) => <ProductDetail {...props} />} />
       <Route path="/request-list" render={(props) => <RequestList {...props} />} />
       <Route path="/leaderboard-list" render={(props) => <LeaderboardList {...props} />} />
+      <Route path="/create-offer" render={(props) => <CreateOffer {...props} />} />
       <Redirect to="/landing-page" />
     </Switch>
   </BrowserRouter>,
