@@ -52,6 +52,7 @@ function ProfilePage() {
                     <CardImg top width="100%" src={require("assets/img/items/lawn-mower.jpg")} style={{'height': '10rem',}} />
                     <CardBody>
                       <CardTitle>Brand new lawn mower</CardTitle>
+                      <CardText> Owned By - Ryan</CardText>
                       <CardText style={{'height': '7rem',}}>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
                       <Button color="success">Request Item</Button>
                     </CardBody>

@@ -29,7 +29,17 @@ import 'assets/demo/nucleo-icons-page-styles.css?v=1.4.0';
 // import Index from 'views/Index.js';
 import NucleoIcons from 'views/NucleoIcons.js';
 // import LoginPage from 'views/examples/LoginPage.js';
-import { LandingPage, LoginPage, ProfilePage, RegisterPage, OfferList } from 'views';
+import {
+  LandingPage,
+  LoginPage,
+  ProfilePage,
+  RegisterPage,
+  OfferList,
+  ProductDetail,
+  RequestList,
+  LeaderboardList,
+} from 'views';
+import LeaderboardCard from "./components/LeaderboardCard";
 // import ProfilePage from 'views/examples/ProfilePage.js';
 
 const hist = createBrowserHistory();
@@ -55,11 +65,11 @@ ReactDOM.render(
         render={(props) => <RegisterPage {...props} />}
       />
       <Route path="/login-page" render={(props) => <LoginPage {...props} />} />
+      <Route path="/have-list" render={(props) => <OfferList {...props} />} />
+      <Route path="/prod-detail" render={(props) => <ProductDetail {...props} />} />
+      <Route path="/request-list" render={(props) => <RequestList {...props} />} />
+      <Route path="/leaderboard-list" render={(props) => <LeaderboardList {...props} />} />
       <Redirect to="/landing-page" />
-    <Route
-        path="/have-list"
-        render={(props) => <OfferList {...props} />}
-        />
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')

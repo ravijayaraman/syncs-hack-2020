@@ -80,19 +80,37 @@ function ExamplesNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink>
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                <NavLink to="/leaderboard-list">
+                  <Link to="/leaderboard-list">
+                    <i className="now-ui-icons sport_trophy"></i>
+                    <p>Leaderboard</p>
+                  </Link>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/request-list">
+                  <Link to="/request-list">
+                  <i className="now-ui-icons arrows-1_share-66"></i>
                   <p>Request List</p>
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
                   <Link to="/have-list">
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className="now-ui-icons shopping_shop"></i>
                   <p>Have List</p>
                   </Link>
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink to="/request-list">
+                <Link to="/request-list">
+                <i className="now-ui-icons design_bullet-list-67"></i>
+                <p>Leaderboard</p>
+                </Link>
+             </NavLink>
+          </NavItem>
               <NavItem>
                 <NavLink to="/profile-page" id="twitter-tooltip">
                   <Link to="/profile-page">
