@@ -36,7 +36,9 @@ import {
   RegisterPage,
   OfferList,
   RequestList,
+  LeaderboardList,
 } from 'views';
+import LeaderboardCard from "./components/LeaderboardCard";
 // import ProfilePage from 'views/examples/ProfilePage.js';
 
 const hist = createBrowserHistory();
@@ -64,6 +66,7 @@ ReactDOM.render(
       <Route path="/login-page" render={(props) => <LoginPage {...props} />} />
       <Route path="/have-list" render={(props) => <OfferList {...props} />} />
       <Route path="/request-list" render={(props) => <RequestList {...props} />} />
+      <Route path="/leaderboard-list" render={(props) => <LeaderboardList {...props} />} />
       <Redirect to="/landing-page" />
     </Switch>
   </BrowserRouter>,

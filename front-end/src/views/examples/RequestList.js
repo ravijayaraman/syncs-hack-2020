@@ -58,29 +58,7 @@ function RequestList() {
                 <div className="section">
                     <Container>
                         <div>
-                            <Modal isOpen={modal} toggle={toggleModal} >
-                                <ModalHeader toggle={toggleModal}>Product Details</ModalHeader>
-                                <ModalBody>
-                                    <Card>
-                                        <CardImg top width="100%" src={require("assets/img/items/kayak.jpg")} alt="Card image cap" />
-                                        <CardBody>
-                                            <CardTitle>Kayak</CardTitle>
-                                            <CardText>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
-                                        </CardBody>
-                                        <CardFooter>
-                                            <Button color="warning">Currently rented <Badge href="#" color="dark">4 days</Badge></Button>{' '}
-                                        </CardFooter>
-                                    </Card>
-                                </ModalBody>
-                                <ModalFooter>
-                                    <Button color="info" onClick={toggleModal}>Edit</Button>{' '}
-                                    <Button color="danger" onClick={toggleModal}>Remove</Button>{' '}
-                                    <Button color="secondary" onClick={toggleModal}>Cancel</Button>
-                                </ModalFooter>
-                            </Modal>
-                        </div>
-                        <div>
-                            <h2>Category</h2>
+                            <h2>Requests</h2>
                             <Nav tabs>
                                 <NavItem>
                                     <NavLink

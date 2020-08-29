@@ -80,6 +80,14 @@ function ExamplesNavbar() {
           >
             <Nav navbar>
               <NavItem>
+                <NavLink to="/leaderboard-list">
+                  <Link to="/leaderboard-list">
+                    <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                    <p>Leaderboard</p>
+                  </Link>
+                </NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink to="/request-list">
                   <Link to="/request-list">
                   <i className="now-ui-icons arrows-1_cloud-download-93"></i>
