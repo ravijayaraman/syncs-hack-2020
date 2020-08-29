@@ -54,7 +54,7 @@ function ExamplesNavbar() {
           <div className="navbar-translate">
             <NavbarBrand target="_blank" id="navbar-brand">
               <NavLink>
-                <Link to="/">Food Genie</Link>
+                <Link to="/">CommShare</Link>
               </NavLink>
 
               {/* <Link to="/about">About</Link> */}
@@ -80,31 +80,17 @@ function ExamplesNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById('download-section')
-                      .scrollIntoView();
-                  }}
-                >
+                <NavLink>
                   <i className="now-ui-icons arrows-1_cloud-download-93"></i>
                   <p>Request List</p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  href="#pablo"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document
-                      .getElementById('download-section')
-                      .scrollIntoView();
-                  }}
-                >
+                <NavLink>
+                  <Link to="/have-list">
                   <i className="now-ui-icons arrows-1_cloud-download-93"></i>
                   <p>Have List</p>
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
