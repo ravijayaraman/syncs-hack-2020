@@ -41,58 +41,58 @@ function ProfilePage() {
         <ProfilePageHeader />
         <div className="section">
           <Container>
-            <h3 className="title">Available Items (6)</h3>
-            <h5 className="description">
+            <h3 className="title pt-0 mt-0">Available Items (6)</h3>
+            <h5 className="lead text-center mb-4">
               Items you can rent or borrow from Ryan
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
                 <CardDeck>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
-                    <CardImg top width="100%" src={require("assets/img/items/lawn-mower.jpg")} alt="Card image cap" />
+                    <CardImg top width="100%" src={require("assets/img/items/lawn-mower.jpg")} style={{'height': '10rem',}} />
                     <CardBody>
                       <CardTitle>Brand new lawn mower</CardTitle>
-                      <CardText>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
+                      <CardText style={{'height': '7rem',}}>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
                       <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
-                  <Card className="mb-4" style={{'min-width': '15rem',}}>
-                    <CardImg top width="100%" src={require("assets/img/items/drill.jpg")} alt="Card image cap" />
+                  <Card className="mb-4 rounded" style={{'min-width': '15rem',}}>
+                    <CardImg top width="100%" src={require("assets/img/items/drill.jpg")} style={{'height': '10rem',}} />
                     <CardBody>
                       <CardTitle>Barely used drill</CardTitle>
-                      <CardText>Drill is good drill, come and get it.</CardText>
+                      <CardText style={{'height': '7rem',}}>Drill is good drill, come and get it.</CardText>
                       <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
-                    <CardImg top width="100%" src={require("assets/img/items/kayak.jpg")} alt="Card image cap" />
+                    <CardImg top width="100%" src={require("assets/img/items/kayak.jpg")} style={{'height': '10rem',}} />
                     <CardBody>
                       <CardTitle>Kayak</CardTitle>
-                      <CardText>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
+                      <CardText style={{'height': '7rem',}}>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
                       <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
-                    <CardImg top width="100%" src={require("assets/img/items/drill.jpg")} alt="Card image cap" />
+                    <CardImg top width="100%" src={require("assets/img/items/drill.jpg")} style={{'height': '10rem',}} />
                     <CardBody>
                       <CardTitle>Old but reliable drill</CardTitle>
-                      <CardText>Drill is good drill, come and get it.</CardText>
+                      <CardText style={{'height': '7rem',}}>Drill is good drill, come and get it.</CardText>
                       <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
-                    <CardImg top width="100%" src={require("assets/img/items/kayak.jpg")} alt="Card image cap" />
+                    <CardImg top width="100%" src={require("assets/img/items/kayak.jpg")} style={{'height': '10rem',}} />
                     <CardBody>
                       <CardTitle>Kayak, used once</CardTitle>
-                      <CardText>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
+                      <CardText style={{'height': '7rem',}}>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
                       <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
-                    <CardImg top width="100%" src={require("assets/img/items/lawn-mower.jpg")} alt="Card image cap" />
+                    <CardImg top width="100%" src={require("assets/img/items/lawn-mower.jpg")} style={{'height': '10rem',}} />
                     <CardBody>
                       <CardTitle>New Lawn Mower</CardTitle>
-                      <CardText>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
+                      <CardText style={{'height': '7rem',}}>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
                       <Button color="success">Request Item</Button>
                     </CardBody>
                   </Card>
@@ -101,9 +101,9 @@ function ProfilePage() {
             </Row>
           </Container>
           <Container>
-            <h3 className="title">Requested Items (3)</h3>
-            <h5 className="description">
-              Items Ryan is looking for
+            <h3 className="title pt-0 mt-0">Requested Items (3)</h3>
+            <h5 className="lead text-center mb-4">
+            Items Ryan is looking for
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
@@ -111,21 +111,21 @@ function ProfilePage() {
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
                     <CardBody>
                       <CardTitle>Torch</CardTitle>
-                      <CardText>Looking for a big ol' torch</CardText>
+                      <CardText style={{'height': '7rem',}}>Looking for a big ol' torch</CardText>
                       <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
                     <CardBody>
                       <CardTitle>Racing Bike</CardTitle>
-                      <CardText>I am looking for a racing bike, preferably one I could go real fast with</CardText>
+                      <CardText style={{'height': '7rem',}}>I am looking for a racing bike, preferably one I could go real fast with</CardText>
                       <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{'min-width': '15rem',}}>
                     <CardBody>
                       <CardTitle>Screwdriver</CardTitle>
-                      <CardText>I am desperately looking for a hex screwdriver to finish constructing the birdhouse I have been making during the last few months in isolation</CardText>
+                      <CardText style={{'height': '7rem',}}>I am desperately looking for a hex screwdriver to finish constructing the birdhouse I have been making.</CardText>
                       <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
