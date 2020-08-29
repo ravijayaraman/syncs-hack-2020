@@ -81,14 +81,14 @@ function ExamplesNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink>
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className="now-ui-icons arrows-1_share-66"></i>
                   <p>Request List</p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
                   <Link to="/have-list">
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className="now-ui-icons shopping_shop"></i>
                   <p>Have List</p>
                   </Link>
                 </NavLink>

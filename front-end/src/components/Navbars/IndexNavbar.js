@@ -90,7 +90,7 @@ function IndexNavbar() {
                       .scrollIntoView();
                   }}
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className="now-ui-icons arrows-1_share-66"></i>
                   <p>Request List</p>
                 </NavLink>
               </NavItem>
@@ -104,7 +104,7 @@ function IndexNavbar() {
                       .scrollIntoView();
                   }}
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className="now-ui-icons shopping_shop"></i>
                   <p>Have List</p>
                 </NavLink>
               </NavItem>

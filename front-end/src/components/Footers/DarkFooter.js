@@ -13,9 +13,7 @@ function DarkFooter() {
           </ul>
         </nav>
         <div className="copyright" id="copyright">
-          © {new Date().getFullYear()}, Designed by TeamName
-         
-          . Coded by us awesome people.
+          © {new Date().getFullYear()}, Designed by CommShare. Coded by us awesome people!
         </div>
       </Container>
     </footer>
