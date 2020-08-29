@@ -43,7 +43,7 @@ function ProfilePage() {
           <Container>
             <h3 className="title pt-0 mt-0">Available Items (6)</h3>
             <h5 className="lead text-center mb-4">
-              Items you can rent or borrow from Ryan
+              Items you can borrow from Ryan
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
@@ -103,7 +103,7 @@ function ProfilePage() {
           <Container>
             <h3 className="title pt-0 mt-0">Requested Items (3)</h3>
             <h5 className="lead text-center mb-4">
-            Items Ryan is looking for
+            Items Ryan is looking to borrow
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
