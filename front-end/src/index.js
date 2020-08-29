@@ -35,6 +35,7 @@ import {
   ProfilePage,
   RegisterPage,
   OfferList,
+  RequestList,
 } from 'views';
 // import ProfilePage from 'views/examples/ProfilePage.js';
 
@@ -62,6 +63,7 @@ ReactDOM.render(
       />
       <Route path="/login-page" render={(props) => <LoginPage {...props} />} />
       <Route path="/have-list" render={(props) => <OfferList {...props} />} />
+      <Route path="/request-list" render={(props) => <RequestList {...props} />} />
       <Redirect to="/landing-page" />
     </Switch>
   </BrowserRouter>,
