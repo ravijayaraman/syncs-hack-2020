@@ -58,7 +58,7 @@ function RequestList() {
                 <div className="section">
                     <Container>
                         <div>
-                            <h2>Requests</h2>
+                            <h2>Requests from Your Community</h2>
                             <Nav tabs>
                                 <NavItem>
                                     <NavLink
