@@ -24,6 +24,7 @@ import {
 import ExamplesNavbar from 'components/Navbars/ExamplesNavbar.js';
 import ProfilePageHeader from 'components/Headers/ProfilePageHeader.js';
 import DefaultFooter from 'components/Footers/DefaultFooter.js';
+import { OfferCard } from 'components';
 
 function ProfilePage() {
   const [pills, setPills] = React.useState('2');
@@ -52,51 +53,30 @@ function ProfilePage() {
             <Row>
               <Col className="ml-auto mr-auto" md="10">
                 <CardDeck>
-                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
-                    <CardImg
-                      top
-                      width="100%"
-                      src={require('assets/img/items/lawn-mower.jpg')}
-                      style={{ height: '10rem' }}
-                    />
-                    <CardBody>
-                      <CardTitle>Brand new lawn mower</CardTitle>
-                      <CardText> Owned By - Ryan</CardText>
-                      <CardText style={{ height: '7rem' }}>
-                        This lawn mower is a good as new and works perfectly,
-                        feel free to contact me with any questions!
-                      </CardText>
-                    </CardBody>
-                  </Card>
-                  <Card className="mb-4 rounded" style={{ minWidth: '15rem' }}>
-                    <CardImg
-                      top
-                      width="100%"
-                      src={require('assets/img/items/drill.jpg')}
-                      style={{ height: '10rem' }}
-                    />
-                    <CardBody>
-                      <CardTitle>Barely used drill</CardTitle>
-                      <CardText style={{ height: '7rem' }}>
-                        Drill is good drill, come and get it.
-                      </CardText>
-                    </CardBody>
-                  </Card>
-                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
-                    <CardImg
-                      top
-                      width="100%"
-                      src={require('assets/img/items/kayak.jpg')}
-                      style={{ height: '10rem' }}
-                    />
-                    <CardBody>
-                      <CardTitle>Kayak</CardTitle>
-                      <CardText style={{ height: '7rem' }}>
-                        Anyone who loves being out in nature will absolutely
-                        adore this kayak, it has been through som...
-                      </CardText>
-                    </CardBody>
-                  </Card>
+                  <OfferCard
+                    id="1"
+                    title="Brand new lawn mower"
+                    user="Owned By - Ryan"
+                    description="This lawn mower is a good as new and works perfectly,
+                        feel free to contact me with any questions!"
+                    photo={require('assets/img/items/lawn-mower.jpg')}
+                  />
+                  <OfferCard
+                    id="2"
+                    title="Barely used drill"
+                    user="Owned By - Ryan"
+                    description="Drill is good drill, come and get it."
+                    photo={require('assets/img/items/drill.jpg')}
+                  />
+                  <OfferCard
+                    id="3"
+                    title="Kayak"
+                    user="Owned By - Ryan"
+                    description="Anyone who loves being out in nature will absolutely
+                    adore this kayak, it has been through som..."
+                    photo={require('assets/img/items/kayak.jpg')}
+                  />
+
                   <Card className="mb-4" style={{ minWidth: '15rem' }}>
                     <CardImg
                       top
