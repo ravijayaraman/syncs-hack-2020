@@ -24,6 +24,7 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
+import LandingPageHeader from "../../components/Headers/LandingPageHeader";
 
 function CreateOffer() {
     const [pills, setPills] = React.useState("2");
@@ -42,7 +43,7 @@ function CreateOffer() {
         <>
             <ExamplesNavbar />
             <div className="wrapper">
-                <ProfilePageHeader />
+                <LandingPageHeader />
                 <div className="section">
                     <Container>
                         <Row>
