@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // reactstrap components
 import {
@@ -7,6 +7,12 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
+  CardBody,
+  Card,
+  CardTitle,
+  CardText,
+  CardDeck,
+  CardImg,
   Container,
   Row,
   Col,
@@ -16,11 +22,19 @@ import {
 import ExamplesNavbar from 'components/Navbars/ExamplesNavbar.js';
 import LandingPageHeader from 'components/Headers/LandingPageHeader.js';
 import DefaultFooter from 'components/Footers/DefaultFooter.js';
+import { OfferCard, OffersByCategory } from 'components';
 
 function LandingPage() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
-  React.useEffect(() => {
+  const [firstFocus, setFirstFocus] = useState(false);
+  const [lastFocus, setLastFocus] = useState(false);
+
+  useEffect(() => {
+    fetch(
+      'https://my-json-server.typicode.com/ravijayaraman/syncs-hack-2020/posts'
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+
     document.body.classList.add('landing-page');
     document.body.classList.add('sidebar-collapse');
     document.documentElement.classList.remove('nav-open');
@@ -31,146 +45,30 @@ function LandingPage() {
       document.body.classList.remove('sidebar-collapse');
     };
   }, []);
+
   return (
     <>
       <ExamplesNavbar />
       <div className="wrapper">
         <LandingPageHeader />
-
-        <div className="section section-team text-center">
+        <div className="section text-center">
           <Container>
-            <h2 className="title">Here is our team</h2>
-            <div className="team">
-              <Row>
-                <Col md="4">
-                  <div className="team-player">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-fluid img-raised"
-                      src={require('assets/img/avatar.jpg')}
-                    ></img>
-                    <h4 className="title">Romina Hadid</h4>
-                    <p className="category text-info">Model</p>
-                    <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{' '}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{' '}
-                      for people to be able to follow them outside the site.
-                    </p>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-facebook-square"></i>
-                    </Button>
-                  </div>
-                </Col>
-                <Col md="4">
-                  <div className="team-player">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-fluid img-raised"
-                      src={require('assets/img/ryan.jpg')}
-                    ></img>
-                    <h4 className="title">Ryan Tompson</h4>
-                    <p className="category text-info">Designer</p>
-                    <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{' '}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{' '}
-                      for people to be able to follow them outside the site.
-                    </p>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-linkedin"></i>
-                    </Button>
-                  </div>
-                </Col>
-                <Col md="4">
-                  <div className="team-player">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-fluid img-raised"
-                      src={require('assets/img/eva.jpg')}
-                    ></img>
-                    <h4 className="title">Eva Jenner</h4>
-                    <p className="category text-info">Fashion</p>
-                    <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{' '}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{' '}
-                      for people to be able to follow them outside the site.
-                    </p>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-google-plus"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-youtube"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                  </div>
-                </Col>
-              </Row>
-            </div>
+            <h3 className="title">Electronics</h3>
+            <h5 className="description">Electronics</h5>
+            <OffersByCategory />
+          </Container>
+          <Container>
+            <h3 className="title">Electronics</h3>
+            <h5 className="description">Electronics</h5>
+            <OffersByCategory />
+          </Container>
+          <Container>
+            <h3 className="title">Home</h3>
+            <h3 className="description">Home improvement</h3>
+
+            <OffersByCategory />
           </Container>
         </div>
-
         <DefaultFooter />
       </div>
     </>
