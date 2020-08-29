@@ -58,7 +58,7 @@ function IndexNavbar() {
               target="_blank"
               id="navbar-brand"
             >
-              Food Genie
+              CommShare
             </NavbarBrand>
             <button
               className="navbar-toggler navbar-toggler"
