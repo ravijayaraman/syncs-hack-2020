@@ -36,10 +36,10 @@ function LandingPageHeader() {
         ></div>
         <div className="content-center">
           <Container>
-            <h1 className="title">Welcome</h1>
+            <h1 className="title">CommShare</h1>
             <div className="text-center">
               <h5 className="description">
-                This is a marketplace for sharing the items
+                Share Items, Reduce Consumerism and Battle it Out to Be the Best Community!
               </h5>
             </div>
             {/* <div className="text-center">

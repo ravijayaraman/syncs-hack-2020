@@ -41,7 +41,7 @@ function LoginPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login.jpg") + ")",
+            backgroundImage: "url(" + require("assets/img/bike.jpg") + ")",
           }}
         ></div>
         <div className="content">
@@ -53,7 +53,8 @@ function LoginPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/newlogowhite.png")}
+                        src={require("assets/img/logocrop.png")}
+                        height="75"
                       ></img>
                     </div>
                   </CardHeader>
@@ -117,17 +118,7 @@ function LoginPage() {
                         </a>
                       </h6>
                     </div>
-                    <div className="pull-right">
-                      <h6>
-                        <a
-                          className="link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Need Help?
-                        </a>
-                      </h6>
-                    </div>
+    
                   </CardFooter>
                 </Form>
               </Card>

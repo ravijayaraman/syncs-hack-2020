@@ -43,7 +43,7 @@ function ProfilePage() {
           <Container>
             <h3 className="title pt-0 mt-0">Available Items (6)</h3>
             <h5 className="lead text-center mb-4">
-              Items you can rent or borrow from Ryan
+              Items you can borrow from Ryan
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
@@ -52,6 +52,7 @@ function ProfilePage() {
                     <CardImg top width="100%" src={require("assets/img/items/lawn-mower.jpg")} style={{'height': '10rem',}} />
                     <CardBody>
                       <CardTitle>Brand new lawn mower</CardTitle>
+                      <CardText> Owned By - Ryan</CardText>
                       <CardText style={{'height': '7rem',}}>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
                       <Button color="success">Request Item</Button>
                     </CardBody>
@@ -103,7 +104,7 @@ function ProfilePage() {
           <Container>
             <h3 className="title pt-0 mt-0">Requested Items (3)</h3>
             <h5 className="lead text-center mb-4">
-            Items Ryan is looking for
+            Items Ryan is looking to borrow
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">

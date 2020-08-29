@@ -53,8 +53,8 @@ function RegisterPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/newlogowhite.png")}
-                        height="175"
+                        src={require("assets/img/logocrop.png")}
+                        height="75"
                       ></img>
                     </div>
                   </CardHeader>
@@ -151,17 +151,6 @@ function RegisterPage() {
                           onClick={(e) => e.preventDefault()}
                         >
                           Already a Member? Sign In
-                        </a>
-                      </h6>
-                    </div>
-                    <div className="pull-right">
-                      <h6>
-                        <a
-                          className="link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Need Help?
                         </a>
                       </h6>
                     </div>
