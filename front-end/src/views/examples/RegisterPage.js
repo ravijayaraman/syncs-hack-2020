@@ -23,6 +23,9 @@ import TransparentFooter from "components/Footers/TransparentFooter.js";
 function RegisterPage() {
   const [firstFocus, setFirstFocus] = React.useState(false);
   const [lastFocus, setLastFocus] = React.useState(false);
+  const [userName, setUserName] = React.useState(false);
+  const [email, setEmail] = React.useState(false);
+  const [password, setPassword] = React.useState(false);
   React.useEffect(() => {
     document.body.classList.add("login-page");
     document.body.classList.add("sidebar-collapse");
@@ -75,6 +78,7 @@ function RegisterPage() {
                         type="text"
                         onFocus={() => setFirstFocus(true)}
                         onBlur={() => setFirstFocus(false)}
+                        onChange={event => setUserName(event.target.value)}
                       ></Input>
                     </InputGroup>
                     <InputGroup
@@ -93,6 +97,7 @@ function RegisterPage() {
                         type="text"
                         onFocus={() => setLastFocus(true)}
                         onBlur={() => setLastFocus(false)}
+                        onChange={event => setEmail(event.target.value)}
                       ></Input>
                     </InputGroup>
           <InputGroup
@@ -108,9 +113,10 @@ function RegisterPage() {
             </InputGroupAddon>
             <Input
               placeholder="Password..."
-              type="text"
+              type="password"
               onFocus={() => setFirstFocus(true)}
               onBlur={() => setFirstFocus(false)}
+              onChange={event => setPassword(event.target.value)}
             ></Input>
           </InputGroup>
           <InputGroup
@@ -138,7 +144,39 @@ function RegisterPage() {
                       className="btn-round"
                       color="info"
                       href="#pablo"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={() => {
+                        const requestOptions = {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          mode: 'cors',
+                          body: JSON.stringify(
+                            {
+                              name: userName, 
+                              email:email, 
+                              password: password, 
+                              role: 'publisher',
+                            }
+                            )
+                        };  
+                      fetch('http://localhost:5000/api/v1/auth/register', requestOptions)
+                      .then(response => response.json())
+                      .then(data => {
+                        if (data.success == false) {
+                          alert("Please fill in all the required fields.")
+                        } else {
+                          alert("You have successfully registered and are now logged in")
+                          console.log(data.token) // I get a token, and I need to do something with it.
+                          localStorage.setItem('login', JSON.stringify({
+                            login: true,
+                            token: data.token,
+                          }));
+                          window.location.href='/landing-page'
+                        }
+                      });
+                      console.log(userName);
+                      console.log(email);
+                      console.log(password);
+                      }}
                       size="lg"
                     >
                       Register
@@ -148,7 +186,7 @@ function RegisterPage() {
                         <a
                           className="link"
                           href="#pablo"
-                          onClick={(e) => e.preventDefault()}
+                          onClick={(e) => window.location.href='/login-page'}
                         >
                           Already a Member? Sign In
                         </a>
@@ -167,4 +205,3 @@ function RegisterPage() {
 }
 
 export default RegisterPage;
-
