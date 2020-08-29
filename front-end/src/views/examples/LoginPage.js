@@ -53,7 +53,8 @@ function LoginPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/newlogowhite.png")}
+                        src={require("assets/img/logocrop.png")}
+                        height="75"
                       ></img>
                     </div>
                   </CardHeader>

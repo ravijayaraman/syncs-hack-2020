@@ -53,8 +53,8 @@ function RegisterPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/newlogowhite.png")}
-                        height="175"
+                        src={require("assets/img/logocrop.png")}
+                        height="75"
                       ></img>
                     </div>
                   </CardHeader>
