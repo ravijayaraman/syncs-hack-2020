@@ -51,51 +51,14 @@ function OfferList() {
         <Card className="mb-4" style={{'min-width': '15rem',}}>
 <CardImg top width="100%" src={require("assets/img/items/lawn-mower.jpg")} alt="Card image cap" />
         <CardBody>
-        <CardTitle>Brand new lawn mower</CardTitle>
+        <CardTitle style = {{"fontWeight":"Bold"}}>Brand new lawn mower</CardTitle>
     <CardText>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
-    <Button color="success">Request Item</Button>
+    <CardText style = {{"fontSize":"14px"}}>Located at - Chippendale</CardText>
+    <CardText style = {{"fontSize":"14px"}}>Category - Hardware</CardText>
+    <Button color="success">Confirm Request</Button>
     </CardBody>
     </Card>
-    <Card className="mb-4" style={{'min-width': '15rem',}}>
-<CardImg top width="100%" src={require("assets/img/items/drill.jpg")} alt="Card image cap" />
-        <CardBody>
-        <CardTitle>Barely used drill</CardTitle>
-    <CardText>Drill is good drill, come and get it.</CardText>
-    <Button color="success">Request Item</Button>
-    </CardBody>
-    </Card>
-    <Card className="mb-4" style={{'min-width': '15rem',}}>
-<CardImg top width="100%" src={require("assets/img/items/kayak.jpg")} alt="Card image cap" />
-        <CardBody>
-        <CardTitle>Kayak</CardTitle>
-        <CardText>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
-    <Button color="success">Request Item</Button>
-    </CardBody>
-    </Card>
-    <Card className="mb-4" style={{'min-width': '15rem',}}>
-<CardImg top width="100%" src={require("assets/img/items/drill.jpg")} alt="Card image cap" />
-        <CardBody>
-        <CardTitle>Old but reliable drill</CardTitle>
-    <CardText>Drill is good drill, come and get it.</CardText>
-    <Button color="success">Request Item</Button>
-    </CardBody>
-    </Card>
-    <Card className="mb-4" style={{'min-width': '15rem',}}>
-<CardImg top width="100%" src={require("assets/img/items/kayak.jpg")} alt="Card image cap" />
-        <CardBody>
-        <CardTitle>Kayak, used once</CardTitle>
-    <CardText>Anyone who loves being out in nature will absolutely adore this kayak, it has been through som...</CardText>
-    <Button color="success">Request Item</Button>
-    </CardBody>
-    </Card>
-    <Card className="mb-4" style={{'min-width': '15rem',}}>
-<CardImg top width="100%" src={require("assets/img/items/lawn-mower.jpg")} alt="Card image cap" />
-        <CardBody>
-        <CardTitle>New Lawn Mower</CardTitle>
-    <CardText>This lawn mower is a good as new and works perfectly, feel free to contact me with any questions!</CardText>
-    <Button color="success">Request Item</Button>
-    </CardBody>
-    </Card>
+
     </CardDeck>
     </Col>
     </Row>
