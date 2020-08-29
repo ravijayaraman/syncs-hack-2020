@@ -52,14 +52,10 @@ function ExamplesNavbar() {
       <Navbar className={'fixed-top ' + navbarColor} color="info" expand="lg">
         <Container>
           <div className="navbar-translate">
-            <NavbarBrand target="_blank" id="navbar-brand">
-              <NavLink>
-                <Link to="/">CommShare</Link>
-              </NavLink>
-
-              {/* <Link to="/about">About</Link> */}
+            <NavbarBrand tag={Link} to="/" id="navbar-brand">
+              CommShare
             </NavbarBrand>
-            <button
+            {/* <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
                 document.documentElement.classList.toggle('nav-open');
@@ -71,7 +67,7 @@ function ExamplesNavbar() {
               <span className="navbar-toggler-bar top-bar"></span>
               <span className="navbar-toggler-bar middle-bar"></span>
               <span className="navbar-toggler-bar bottom-bar"></span>
-            </button>
+            </button> */}
           </div>
           <Collapse
             className="justify-content-end"
@@ -80,43 +76,33 @@ function ExamplesNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink to="/leaderboard-list">
-                  <Link to="/leaderboard-list">
-                    <i className="now-ui-icons sport_trophy"></i>
-                    <p>Leaderboard</p>
-                  </Link>
+                <NavLink tag={Link} to="/leaderboard-list">
+                  <i className="now-ui-icons sport_trophy"></i>
+                  <p>Leaderboard</p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/request-list">
-                  <Link to="/request-list">
+                <NavLink tag={Link} to="/request-list">
                   <i className="now-ui-icons arrows-1_share-66"></i>
                   <p>Requests</p>
-                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink>
-                  <Link to="/have-list">
+                <NavLink tag={Link} to="/have-list">
                   <i className="now-ui-icons shopping_shop"></i>
                   <p>Borrow</p>
-                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/create-offer">
-                <Link to="/create-offer">
-                <i className="now-ui-icons design_bullet-list-67"></i>
-                <p>Create Offer</p>
-                </Link>
-             </NavLink>
-          </NavItem>
+                <NavLink tag={Link} to="/create-offer">
+                  <i className="now-ui-icons design_bullet-list-67"></i>
+                  <p>Create Offer</p>
+                </NavLink>
+              </NavItem>
               <NavItem>
-                <NavLink to="/profile-page" id="twitter-tooltip">
-                  <Link to="/profile-page">
-                    <i class="far fa-user-circle fa-2x"></i>
-                    <p className="d-lg-none d-xl-none">Profile</p>
-                  </Link>
+                <NavLink tag={Link} to="/profile-page" id="twitter-tooltip">
+                  <i className="far fa-user-circle fa-2x"></i>
+                  <p className="d-lg-none d-xl-none">Profile</p>
                 </NavLink>
               </NavItem>
             </Nav>
