@@ -91,7 +91,7 @@ function ExamplesNavbar() {
                 <NavLink to="/request-list">
                   <Link to="/request-list">
                   <i className="now-ui-icons arrows-1_share-66"></i>
-                  <p>Request List</p>
+                  <p>Requests</p>
                   </Link>
                 </NavLink>
               </NavItem>
@@ -99,18 +99,10 @@ function ExamplesNavbar() {
                 <NavLink>
                   <Link to="/have-list">
                   <i className="now-ui-icons shopping_shop"></i>
-                  <p>Have List</p>
+                  <p>Borrow</p>
                   </Link>
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink to="/request-list">
-                <Link to="/request-list">
-                <i className="now-ui-icons design_bullet-list-67"></i>
-                <p>Leaderboard</p>
-                </Link>
-             </NavLink>
-          </NavItem>
               <NavItem>
                 <NavLink to="/profile-page" id="twitter-tooltip">
                   <Link to="/profile-page">
