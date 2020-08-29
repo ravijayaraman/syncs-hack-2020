@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from 'react';
 
 // reactstrap components
 import {
@@ -14,26 +14,61 @@ import {
   InputGroup,
   Container,
   Col,
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import TransparentFooter from "components/Footers/TransparentFooter.js";
+import ExamplesNavbar from 'components/Navbars/ExamplesNavbar.js';
+import TransparentFooter from 'components/Footers/TransparentFooter.js';
+import { UserContext } from 'components';
 
 function LoginPage() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
-  React.useEffect(() => {
-    document.body.classList.add("login-page");
-    document.body.classList.add("sidebar-collapse");
-    document.documentElement.classList.remove("nav-open");
+  const [user, setUser] = useContext(UserContext);
+
+  const [firstFocus, setFirstFocus] = useState(false);
+  const [lastFocus, setLastFocus] = useState(false);
+
+  const [email, setEmail] = useState('john@gmail.com');
+  const [password, setPassword] = useState('123456');
+
+  useEffect(() => {
+    document.body.classList.add('login-page');
+    document.body.classList.add('sidebar-collapse');
+    document.documentElement.classList.remove('nav-open');
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("login-page");
-      document.body.classList.remove("sidebar-collapse");
+      document.body.classList.remove('login-page');
+      document.body.classList.remove('sidebar-collapse');
     };
   }, []);
+
+  function authenticate(email, password) {
+    // Make request to auth endpoint if this was for real, but it's not :)
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          name: 'Bruce Lee',
+          dateOfBirth: '27/11/1940',
+          email: 'bruce.lee@enterthedragon.com',
+          secretQuestion: 'What is my favourite movie?',
+          secretAnswer: 'The Way of the Dragon',
+        });
+      }, 2500);
+    });
+  }
+
+  const authenticateUser = () => {
+    authenticate(email, password).then((resp) => {
+      const { success, token } = resp;
+
+      if (success) {
+        setUser({ ...user, jwt: token });
+        console.log(user.jwt);
+        // navigate('/landing-page');
+      }
+    });
+  };
+
   return (
     <>
       <ExamplesNavbar />
@@ -41,7 +76,7 @@ function LoginPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/bike.jpg") + ")",
+            backgroundImage: 'url(' + require('assets/img/bike.jpg') + ')',
           }}
         ></div>
         <div className="content">
@@ -53,7 +88,7 @@ function LoginPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/logocrop.png")}
+                        src={require('assets/img/logocrop.png')}
                         height="75"
                       ></img>
                     </div>
@@ -61,8 +96,8 @@ function LoginPage() {
                   <CardBody>
                     <InputGroup
                       className={
-                        "no-border input-lg" +
-                        (firstFocus ? " input-group-focus" : "")
+                        'no-border input-lg' +
+                        (firstFocus ? ' input-group-focus' : '')
                       }
                     >
                       <InputGroupAddon addonType="prepend">
@@ -73,14 +108,18 @@ function LoginPage() {
                       <Input
                         placeholder="Email..."
                         type="text"
+                        value={email}
                         onFocus={() => setFirstFocus(true)}
                         onBlur={() => setFirstFocus(false)}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
                       ></Input>
                     </InputGroup>
                     <InputGroup
                       className={
-                        "no-border input-lg" +
-                        (lastFocus ? " input-group-focus" : "")
+                        'no-border input-lg' +
+                        (lastFocus ? ' input-group-focus' : '')
                       }
                     >
                       <InputGroupAddon addonType="prepend">
@@ -91,6 +130,10 @@ function LoginPage() {
                       <Input
                         placeholder="Password..."
                         type="text"
+                        value={password}
+                        onChange={(e) => {
+                          setPassword(e.target.value);
+                        }}
                         onFocus={() => setLastFocus(true)}
                         onBlur={() => setLastFocus(false)}
                       ></Input>
@@ -102,7 +145,7 @@ function LoginPage() {
                       className="btn-round"
                       color="info"
                       href="#pablo"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={authenticateUser}
                       size="lg"
                     >
                       Get Started
@@ -118,7 +161,6 @@ function LoginPage() {
                         </a>
                       </h6>
                     </div>
-    
                   </CardFooter>
                 </Form>
               </Card>
