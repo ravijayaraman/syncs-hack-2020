@@ -37,11 +37,11 @@ function RegisterPage() {
   return (
     <>
       <ExamplesNavbar />
-      <div className="page-header clear-filter" filter-color="blue">
+      <div className="page-header">
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login.jpg") + ")",
+            backgroundImage: "url(" + require("assets/img/bike.jpg") + ")",
           }}
         ></div>
         <div className="content">
@@ -53,7 +53,8 @@ function RegisterPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/now-logo.png")}
+                        src={require("assets/img/newlogowhite.png")}
+                        height="175"
                       ></img>
                     </div>
                   </CardHeader>
@@ -70,7 +71,7 @@ function RegisterPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="First Name..."
+                        placeholder="Name..."
                         type="text"
                         onFocus={() => setFirstFocus(true)}
                         onBlur={() => setFirstFocus(false)}
@@ -88,7 +89,7 @@ function RegisterPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="Last Name..."
+                        placeholder="Email..."
                         type="text"
                         onFocus={() => setLastFocus(true)}
                         onBlur={() => setLastFocus(false)}
@@ -110,6 +111,24 @@ function RegisterPage() {
               type="text"
               onFocus={() => setFirstFocus(true)}
               onBlur={() => setFirstFocus(false)}
+            ></Input>
+          </InputGroup>
+          <InputGroup
+            className={
+              "no-border input-lg" +
+              (lastFocus ? " input-group-focus" : "")
+            }
+          >
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>
+                <i className="now-ui-icons location_pin"></i>
+              </InputGroupText>
+            </InputGroupAddon>
+            <Input
+              placeholder="Postcode..."
+              type="text"
+              onFocus={() => setLastFocus(true)}
+              onBlur={() => setLastFocus(false)}
             ></Input>
           </InputGroup>
                   </CardBody>
