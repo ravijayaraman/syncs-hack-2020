@@ -122,7 +122,7 @@ function RegisterPage() {
                       onClick={(e) => e.preventDefault()}
                       size="lg"
                     >
-                      Sign Up
+                      Get Started
                     </Button>
                     <div className="pull-left">
                       <h6>
@@ -131,7 +131,7 @@ function RegisterPage() {
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                         >
-                          Already a member? Sign In
+                          Create Account
                         </a>
                       </h6>
                     </div>

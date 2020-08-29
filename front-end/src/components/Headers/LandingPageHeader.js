@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Button, Container } from "reactstrap";
+import { Button, Container } from 'reactstrap';
 
 // core components
 
@@ -13,11 +13,11 @@ function LandingPageHeader() {
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
         pageHeader.current.style.transform =
-          "translate3d(0," + windowScrollTop + "px,0)";
+          'translate3d(0,' + windowScrollTop + 'px,0)';
       };
-      window.addEventListener("scroll", updateScroll);
+      window.addEventListener('scroll', updateScroll);
       return function cleanup() {
-        window.removeEventListener("scroll", updateScroll);
+        window.removeEventListener('scroll', updateScroll);
       };
     }
   });
@@ -27,14 +27,22 @@ function LandingPageHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/bg6.jpg") + ")",
+            backgroundImage:
+              'url(' +
+              require('assets/img/tiffany-nutt-0ClfreiNppM-unsplash.jpg') +
+              ')',
           }}
           ref={pageHeader}
         ></div>
         <div className="content-center">
           <Container>
-            <h1 className="title">This is our great company.</h1>
+            <h1 className="title">Welcome</h1>
             <div className="text-center">
+              <h5 className="description">
+                This is a marketplace for sharing the items
+              </h5>
+            </div>
+            {/* <div className="text-center">
               <Button
                 className="btn-icon btn-round"
                 color="info"
@@ -60,6 +68,7 @@ function LandingPageHeader() {
                 <i className="fab fa-google-plus"></i>
               </Button>
             </div>
+           */}
           </Container>
         </div>
       </div>

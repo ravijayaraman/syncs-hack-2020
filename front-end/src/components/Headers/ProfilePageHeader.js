@@ -29,9 +29,9 @@ function ProfilePageHeader() {
       >
         <div
           className="page-header-image"
-          // style={{
-          //   backgroundImage: "url(" + require("assets/img/bg5.jpg") + ")",
-          // }}
+          style={{
+            backgroundImage: "url(" + require("assets/img/bg5.jpg") + ")",
+          }}
           ref={pageHeader}
         ></div>
         <Container>
@@ -39,19 +39,19 @@ function ProfilePageHeader() {
             <img alt="..." src={require("assets/img/ryan.jpg")}></img>
           </div>
           <h3 className="title">Ryan Scheinder</h3>
-          <p className="category">Sydney, New South Wales 2000</p>
+          <p className="category">Photographer</p>
           <div className="content">
             <div className="social-description">
-              <h2>6</h2>
-              <p>Available</p>
+              <h2>26</h2>
+              <p>Comments</p>
             </div>
             <div className="social-description">
-              <h2>3</h2>
-              <p>Requests</p>
+              <h2>26</h2>
+              <p>Comments</p>
             </div>
             <div className="social-description">
-              <h2>4.5</h2>
-              <p>Average Rating</p>
+              <h2>48</h2>
+              <p>Bookmarks</p>
             </div>
           </div>
         </Container>
