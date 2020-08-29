@@ -26,10 +26,28 @@ import ProfilePageHeader from 'components/Headers/ProfilePageHeader.js';
 import DefaultFooter from 'components/Footers/DefaultFooter.js';
 import { OfferCard } from 'components';
 
+import { isLogin, me } from 'services/AuthService.js';
+
 function ProfilePage() {
   const [pills, setPills] = React.useState('2');
-  const [user, setUser] = React.useState({name: "Ryan Scheinder"});
+  const [user, setUser] = React.useState({});
+
   React.useEffect(() => {
+    me().then((resp) => {
+      console.log(resp);
+      resp.available_count = 6;
+      resp.request_count = 3;
+      setUser(resp);
+    });
+
+    // fetch('http://localhost:5000/api/v1/auth/me', requestOptions)
+    // .then(response => response.json())
+    // .then(data => {
+    //   console.log(data)
+    //   setUser(data);
+    // });
+
+    // console.log(m);
     document.body.classList.add('profile-page');
     document.body.classList.add('sidebar-collapse');
     document.documentElement.classList.remove('nav-open');
@@ -53,7 +71,7 @@ function ProfilePage() {
   // const requestOptions = {
   //   method: 'GET',
   //   headers: { 'Content-Type': 'application/json',
-  //               'Token': token 
+  //               'Token': token
   //             },
   //   mode: 'cors',
   // }
@@ -65,10 +83,10 @@ function ProfilePage() {
   // });
 
   return (
-    <> 
+    <>
       <ExamplesNavbar />
       <div className="wrapper">
-        <ProfilePageHeader />
+        <ProfilePageHeader user={user} />
         <div className="section">
           <Container>
             <h3 className="title pt-0 mt-0">Available Items (6)</h3>
