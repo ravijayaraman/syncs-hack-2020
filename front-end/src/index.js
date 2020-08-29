@@ -73,7 +73,7 @@ ReactDOM.render(
         />
         <Route path="/have-list" render={(props) => <OfferList {...props} />} />
         <Route
-          path="/prod-detail"
+          path="/prod-detail/:id"
           render={(props) => <ProductDetail {...props} />}
         />
         <Route
