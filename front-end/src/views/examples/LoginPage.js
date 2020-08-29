@@ -38,33 +38,6 @@ function LoginPage() {
     };
   }, []);
 
-  function authenticate(email, password) {
-    // Make request to auth endpoint if this was for real, but it's not :)
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          name: 'Bruce Lee',
-          dateOfBirth: '27/11/1940',
-          email: 'bruce.lee@enterthedragon.com',
-          secretQuestion: 'What is my favourite movie?',
-          secretAnswer: 'The Way of the Dragon',
-        });
-      }, 2500);
-    });
-  }
-
-  const authenticateUser = () => {
-    authenticate(email, password).then((resp) => {
-      const { success, token } = resp;
-
-      if (success) {
-        setUser({ ...user, jwt: token });
-        console.log(user.jwt);
-        // navigate('/landing-page');
-      }
-    });
-  };
-
   return (
     <>
       <ExamplesNavbar />
@@ -104,7 +77,6 @@ function LoginPage() {
                       <Input
                         placeholder="Email..."
                         type="text"
-                        value={email}
                         onFocus={() => setFirstFocus(true)}
                         onBlur={() => setFirstFocus(false)}
                         onChange={event => setEmail(event.target.value)}

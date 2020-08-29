@@ -28,6 +28,7 @@ import { OfferCard } from 'components';
 
 function ProfilePage() {
   const [pills, setPills] = React.useState('2');
+  const [user, setUser] = React.useState({name: "Ryan Scheinder"});
   React.useEffect(() => {
     document.body.classList.add('profile-page');
     document.body.classList.add('sidebar-collapse');
@@ -39,8 +40,32 @@ function ProfilePage() {
       document.body.classList.remove('sidebar-collapse');
     };
   }, []);
+
+  // Trying to get the user information of the currently logged in user based on their token, but I can't make it seem to work
+  // if (localStorage.getItem('login') == null) {
+  //   window.location.href = '/login-page'
+  // }
+  // if (JSON.parse(localStorage.getItem('login')).login == false) {
+  //   window.location.href = '/login-page'
+  // }
+  // const { token } = JSON.parse(localStorage.getItem('login'));
+
+  // const requestOptions = {
+  //   method: 'GET',
+  //   headers: { 'Content-Type': 'application/json',
+  //               'Token': token 
+  //             },
+  //   mode: 'cors',
+  // }
+  // fetch('http://localhost:5000/api/v1/auth/me', requestOptions)
+  // .then(response => response.json())
+  // .then(data => {
+  //   console.log(data)
+  //   setUser(data);
+  // });
+
   return (
-    <>
+    <> 
       <ExamplesNavbar />
       <div className="wrapper">
         <ProfilePageHeader />
@@ -48,7 +73,7 @@ function ProfilePage() {
           <Container>
             <h3 className="title pt-0 mt-0">Available Items (6)</h3>
             <h5 className="lead text-center mb-4">
-              Items you can borrow from Ryan
+              Items you can borrow from {user.name}
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">

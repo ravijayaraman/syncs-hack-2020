@@ -20,6 +20,7 @@ function ProfilePageHeader() {
         window.removeEventListener("scroll", updateScroll);
       };
     }
+    console.log(localStorage.getItem('login'))
   });
   return (
     <>
