@@ -17,7 +17,7 @@
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
 // styles for this kit
@@ -40,39 +40,57 @@ import {
   LeaderboardList,
   CreateOffer,
 } from 'views';
-import LeaderboardCard from "./components/LeaderboardCard";
+import LeaderboardCard from './components/LeaderboardCard';
+import { UserProvider } from 'components';
 // import ProfilePage from 'views/examples/ProfilePage.js';
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
-  <BrowserRouter history={hist}>
-    <Switch>
-      {/* <Route path="/index" render={(props) => <Index {...props} />} /> */}
-      <Route
-        path="/nucleo-icons"
-        render={(props) => <NucleoIcons {...props} />}
-      />
-      <Route
-        path="/landing-page"
-        render={(props) => <LandingPage {...props} />}
-      />
-      <Route
-        path="/profile-page"
-        render={(props) => <ProfilePage {...props} />}
-      />
-      <Route
-        path="/register-page"
-        render={(props) => <RegisterPage {...props} />}
-      />
-      <Route path="/login-page" render={(props) => <LoginPage {...props} />} />
-      <Route path="/have-list" render={(props) => <OfferList {...props} />} />
-      <Route path="/prod-detail" render={(props) => <ProductDetail {...props} />} />
-      <Route path="/request-list" render={(props) => <RequestList {...props} />} />
-      <Route path="/leaderboard-list" render={(props) => <LeaderboardList {...props} />} />
-      <Route path="/create-offer" render={(props) => <CreateOffer {...props} />} />
-      <Redirect to="/landing-page" />
-    </Switch>
-  </BrowserRouter>,
+  <UserProvider>
+    <Router history={hist}>
+      <Switch>
+        {/* <Route path="/index" render={(props) => <Index {...props} />} /> */}
+        <Route
+          path="/nucleo-icons"
+          render={(props) => <NucleoIcons {...props} />}
+        />
+        <Route
+          path="/landing-page"
+          render={(props) => <LandingPage {...props} />}
+        />
+        <Route
+          path="/profile-page"
+          render={(props) => <ProfilePage {...props} />}
+        />
+        <Route
+          path="/register-page"
+          render={(props) => <RegisterPage {...props} />}
+        />
+        <Route
+          path="/login-page"
+          render={(props) => <LoginPage {...props} />}
+        />
+        <Route path="/have-list" render={(props) => <OfferList {...props} />} />
+        <Route
+          path="/prod-detail"
+          render={(props) => <ProductDetail {...props} />}
+        />
+        <Route
+          path="/request-list"
+          render={(props) => <RequestList {...props} />}
+        />
+        <Route
+          path="/leaderboard-list"
+          render={(props) => <LeaderboardList {...props} />}
+        />
+        <Route
+          path="/create-offer"
+          render={(props) => <CreateOffer {...props} />}
+        />
+        <Redirect to="/landing-page" />
+      </Switch>
+    </Router>
+  </UserProvider>,
   document.getElementById('root')
 );
