@@ -18,7 +18,6 @@ const OfferCard = ({ imgUrl, title, description }) => {
       <CardBody>
         <CardTitle>{title}</CardTitle>
         <CardText>{description}</CardText>
-        <Button color="success">Request Item</Button>
       </CardBody>
     </Card>
   );
