@@ -101,18 +101,18 @@ const ProductDetail = (props) => {
           </Container>
 
           <Container>
-            <h3 className="title">Requested Items (3)</h3>
+            <h3 className="title">Similar Items (3)</h3>
             <h5 className="description">Items you are looking to borrow</h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
                 <CardDeck>
-                  <Card className="mb-4" style={{ 'min-width': '15rem' }}>
+                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
                     <CardBody>
                       <CardTitle>Torch</CardTitle>
                       <CardText>Looking for a big ol' torch</CardText>
                     </CardBody>
                   </Card>
-                  <Card className="mb-4" style={{ 'min-width': '15rem' }}>
+                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
                     <CardBody>
                       <CardTitle>Racing Bike</CardTitle>
                       <CardText>
@@ -121,7 +121,7 @@ const ProductDetail = (props) => {
                       </CardText>
                     </CardBody>
                   </Card>
-                  <Card className="mb-4" style={{ 'min-width': '15rem' }}>
+                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
                     <CardBody>
                       <CardTitle>Screwdriver</CardTitle>
                       <CardText>
