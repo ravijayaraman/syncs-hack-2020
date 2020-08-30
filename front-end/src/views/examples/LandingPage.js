@@ -47,7 +47,6 @@ const LandingPage = (props) => {
         setCategories(data.data);
         console.log(data.data);
       }
-      // setIsLoading(false);
     });
 
     axios.get(API + '/offers').then((json) => {
@@ -55,6 +54,13 @@ const LandingPage = (props) => {
 
       console.log(data);
       if (data.success) {
+        let offers = data.data;
+
+        let i = 1;
+        offers.forEach((offer) => {
+          offer.image_id = i++;
+        });
+
         setOffers(data.data);
         console.log(data.data);
       }
@@ -79,8 +85,8 @@ const LandingPage = (props) => {
         <LandingPageHeader />
         <div className="section text-center">
           <Container>
-            <h3 className="title">Electronics</h3>
-            <h5 className="description">Electronics</h5>
+            <h3 className="title">Featured items</h3>
+            <h5 className="description"></h5>
             <Row>
               <Col md="12">
                 <CardDeck>
