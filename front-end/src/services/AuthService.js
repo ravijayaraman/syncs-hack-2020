@@ -24,7 +24,6 @@ export const isLogin = () => {
 export async function me() {
   const obj = getToken();
 
-  console.log(obj.token);
   const config = {
     headers: { Authorization: `Bearer ${obj.token}` },
   };

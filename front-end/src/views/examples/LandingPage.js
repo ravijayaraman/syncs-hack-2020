@@ -33,14 +33,24 @@ const LandingPage = (props) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const API = 'http://localhost:5000/api/v1/offers';
+  const API = 'http://localhost:5000/api/v1';
   const [offers, setOffers] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   //Called when Component is Loaded
   useEffect(() => {
-    // setIsLoading(true);
+    axios.get(API + '/categories').then((json) => {
+      const data = json.data;
 
-    axios.get(API).then((json) => {
+      console.log(data);
+      if (data.success) {
+        setCategories(data.data);
+        console.log(data.data);
+      }
+      // setIsLoading(false);
+    });
+
+    axios.get(API + '/offers').then((json) => {
       const data = json.data;
 
       console.log(data);
@@ -62,11 +72,6 @@ const LandingPage = (props) => {
     };
   }, []);
 
-  //Workflow
-  //1. create state and method using useState
-  //2. Fetch on load. using useEffect
-  //3. map the data into HTML
-
   return (
     <>
       <ExamplesNavbar />
@@ -81,7 +86,8 @@ const LandingPage = (props) => {
                 <CardDeck>
                   {offers.map((offer) => (
                     <OfferCard
-                      id={offer.id}
+                      key={offer._id}
+                      id={offer._id}
                       photo={offer.photo}
                       title={offer.title}
                       description={offer.description}
