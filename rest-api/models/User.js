@@ -26,6 +26,9 @@ const UserSchema = new mongoose.Schema({
   point: {
     type: Number,
   },
+  location: {
+    type: String,
+  },
   password: {
     type: String,
     required: [true, 'Please add a password'],
