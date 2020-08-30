@@ -91,7 +91,7 @@ function ProfilePage() {
           <Container>
             <h3 className="title pt-0 mt-0">Available Items (6)</h3>
             <h5 className="lead text-center mb-4">
-              Items you can borrow from {user.name}
+              Items you have made available to borrow
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
@@ -119,51 +119,29 @@ function ProfilePage() {
                     adore this kayak, it has been through som..."
                     photo={require('assets/img/items/kayak.jpg')}
                   />
-
-                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
-                    <CardImg
-                      top
-                      width="100%"
-                      src={require('assets/img/items/drill.jpg')}
-                      style={{ height: '10rem' }}
-                    />
-                    <CardBody>
-                      <CardTitle>Old but reliable drill</CardTitle>
-                      <CardText style={{ height: '7rem' }}>
-                        Drill is good drill, come and get it.
-                      </CardText>
-                    </CardBody>
-                  </Card>
-                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
-                    <CardImg
-                      top
-                      width="100%"
-                      src={require('assets/img/items/kayak.jpg')}
-                      style={{ height: '10rem' }}
-                    />
-                    <CardBody>
-                      <CardTitle>Kayak, used once</CardTitle>
-                      <CardText style={{ height: '7rem' }}>
-                        Anyone who loves being out in nature will absolutely
-                        adore this kayak, it has been through som...
-                      </CardText>
-                    </CardBody>
-                  </Card>
-                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
-                    <CardImg
-                      top
-                      width="100%"
-                      src={require('assets/img/items/lawn-mower.jpg')}
-                      style={{ height: '10rem' }}
-                    />
-                    <CardBody>
-                      <CardTitle>New Lawn Mower</CardTitle>
-                      <CardText style={{ height: '7rem' }}>
-                        This lawn mower is a good as new and works perfectly,
-                        feel free to contact me with any questions!
-                      </CardText>
-                    </CardBody>
-                  </Card>
+                  <OfferCard
+                    id="2"
+                    title="Old but reliable drill"
+                    user="Owned By - Ryan"
+                    description="Drill is good drill, come and get it."
+                    photo={require('assets/img/items/drill.jpg')}
+                  />
+                  <OfferCard
+                    id="3"
+                    title="Kayak, used once"
+                    user="Owned By - Ryan"
+                    description="Anyone who loves being out in nature will absolutely
+                    adore this kayak, it has been through som..."
+                    photo={require('assets/img/items/kayak.jpg')}
+                  />
+                  <OfferCard
+                    id="1"
+                    title="New Lawn Mower"
+                    user="Owned By - Ryan"
+                    description="This lawn mower is a good as new and works perfectly,
+                    feel free to contact me with any questions!"
+                    photo={require('assets/img/items/lawn-mower.jpg')}
+                  />
                 </CardDeck>
               </Col>
             </Row>
@@ -171,7 +149,7 @@ function ProfilePage() {
           <Container>
             <h3 className="title pt-0 mt-0">Requested Items (3)</h3>
             <h5 className="lead text-center mb-4">
-              Items Ryan is looking to borrow
+              Items you are looking to borrow
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
@@ -182,7 +160,6 @@ function ProfilePage() {
                       <CardText style={{ height: '7rem' }}>
                         Looking for a big ol' torch
                       </CardText>
-                      <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{ minWidth: '15rem' }}>
@@ -192,7 +169,6 @@ function ProfilePage() {
                         I am looking for a racing bike, preferably one I could
                         go real fast with
                       </CardText>
-                      <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{ minWidth: '15rem' }}>
@@ -202,7 +178,6 @@ function ProfilePage() {
                         I am desperately looking for a hex screwdriver to finish
                         constructing the birdhouse I have been making.
                       </CardText>
-                      <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
                 </CardDeck>

@@ -16,7 +16,7 @@ const OfferCard = ({ id, photo, title, user, description }) => {
   return (
     <Card className="mb-4" style={{ minWidth: '15rem' }}>
       <Link to={`/prod-detail/${id}`}>
-        <CardImg top width="100%" src={photo} alt="Card image cap" />
+        <CardImg top style={{ height: '10rem' }} width="100%" src={photo} alt="Card image cap" />
       </Link>
       <CardBody>
         <Link to={`/prod-detail/${id}`}>
