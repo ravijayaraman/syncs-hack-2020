@@ -60,7 +60,7 @@ ReactDOM.render(
       <Route path="/register" component={RegisterPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/have-list" component={OfferList} />
-      <Route path="/prod-detail" component={ProductDetail} />
+      <Route path="/prod-detail/:id" component={ProductDetail} />
       <Route path="/request-list" component={RequestList} />
       <Route path="/leaderboard-list" component={LeaderboardList} />
       <PrivateRoute path="/create-offer" component={CreateOffer} />

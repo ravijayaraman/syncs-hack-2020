@@ -33,18 +33,34 @@ const LandingPage = (props) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const API = 'http://localhost:5000/api/v1/offers';
+  const API = 'http://localhost:5000/api/v1';
   const [offers, setOffers] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   //Called when Component is Loaded
   useEffect(() => {
-    // setIsLoading(true);
-
-    axios.get(API).then((json) => {
+    axios.get(API + '/categories').then((json) => {
       const data = json.data;
 
       console.log(data);
       if (data.success) {
+        setCategories(data.data);
+        console.log(data.data);
+      }
+    });
+
+    axios.get(API + '/offers').then((json) => {
+      const data = json.data;
+
+      console.log(data);
+      if (data.success) {
+        let offers = data.data;
+
+        let i = 1;
+        offers.forEach((offer) => {
+          offer.image_id = i++;
+        });
+
         setOffers(data.data);
         console.log(data.data);
       }
@@ -62,13 +78,6 @@ const LandingPage = (props) => {
     };
   }, []);
 
-
-
-  //Workflow
-  //1. create state and method using useState
-  //2. Fetch on load. using useEffect
-  //3. map the data into HTML
-
   return (
     <>
       <ExamplesNavbar />
@@ -76,15 +85,16 @@ const LandingPage = (props) => {
         <LandingPageHeader />
         <div className="section text-center">
           <Container>
-            <h3 className="title">Electronics</h3>
-            <h5 className="description">Electronics</h5>
+            <h3 className="title">Featured items</h3>
+            <h5 className="description"></h5>
             <Row>
               <Col md="12">
                 <CardDeck>
                   {offers.map((offer) => (
                     <OfferCard
-                      id={offer.id}
-                      photo={offer.photo}      
+                      key={offer._id}
+                      id={offer._id}
+                      photo={offer.photo}
                       title={offer.title}
                       description={offer.description}
                     />

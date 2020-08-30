@@ -27,8 +27,8 @@ exports.getOffers = asyncHandler(async (req, res, next) => {
 // @access    Public
 exports.getOffer = asyncHandler(async (req, res, next) => {
   const offer = await Offer.findById(req.params.id).populate({
-    path: 'bootcamp',
-    select: 'name description',
+    path: 'category',
+    select: 'title description',
   });
 
   if (!offer) {

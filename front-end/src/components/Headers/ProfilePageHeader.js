@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 // reactstrap components
-import { Container } from "reactstrap";
+import { Container } from 'reactstrap';
 
 // core components
 
-function ProfilePageHeader() {
+const ProfilePageHeader = (props) => {
   let pageHeader = React.createRef();
 
   React.useEffect(() => {
@@ -13,14 +13,13 @@ function ProfilePageHeader() {
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
         pageHeader.current.style.transform =
-          "translate3d(0," + windowScrollTop + "px,0)";
+          'translate3d(0,' + windowScrollTop + 'px,0)';
       };
-      window.addEventListener("scroll", updateScroll);
+      window.addEventListener('scroll', updateScroll);
       return function cleanup() {
-        window.removeEventListener("scroll", updateScroll);
+        window.removeEventListener('scroll', updateScroll);
       };
     }
-    console.log(localStorage.getItem('login'))
   });
   return (
     <>
@@ -37,28 +36,28 @@ function ProfilePageHeader() {
         ></div>
         <Container>
           <div className="photo-container">
-            <img alt="..." src={require("assets/img/ryan.jpg")}></img>
+            <img alt="..." src={require('assets/img/ryan.jpg')}></img>
           </div>
-          <h3 className="title">Ryan Scheinder</h3>
-          <p className="category">Sydney, New South Wales 2000</p>
+          <h3 className="title">{props.user.name}</h3>
+          <p className="category">{props.user.location}</p>
           <div className="content">
             <div className="social-description">
-              <h2>6</h2>
+              <h2>{props.user.available_count}</h2>
               <p>Available</p>
             </div>
             <div className="social-description">
-              <h2>3</h2>
+              <h2>{props.user.request_count}</h2>
               <p>Requests</p>
             </div>
             <div className="social-description">
-              <h2>4.5</h2>
-              <p>Average Rating</p>
+              <h2>{props.user.point}</h2>
+              <p>Points</p>
             </div>
           </div>
         </Container>
       </div>
     </>
   );
-}
+};
 
 export default ProfilePageHeader;

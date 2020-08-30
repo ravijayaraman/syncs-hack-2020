@@ -24,17 +24,24 @@ import {
 import ExamplesNavbar from 'components/Navbars/ExamplesNavbar.js';
 import ProfilePageHeader from 'components/Headers/ProfilePageHeader.js';
 import DefaultFooter from 'components/Footers/DefaultFooter.js';
+import LandingPageHeader from 'components/Headers/LandingPageHeader';
+import Axios from 'axios';
 
 const ProductDetail = (props) => {
-  const [pills, setPills] = React.useState('2');
+  const API = 'http://localhost:5000/api/v1';
 
+  const [pills, setPills] = React.useState('2');
   const [offer, setOffer] = useState({});
+
   React.useEffect(() => {
     const id = props.match.params.id;
 
-    // TO FETCH
-    // THEN CALL setOffer
-    //
+    Axios.get(`${API}/offers/${id}`).then((resp) => {
+      if (resp.data.success) {
+        const data = resp.data.data;
+        setOffer(data);
+      }
+    });
 
     document.body.classList.add('profile-page');
     document.body.classList.add('sidebar-collapse');
@@ -50,20 +57,24 @@ const ProductDetail = (props) => {
     <>
       <ExamplesNavbar />
       <div className="wrapper">
-        <ProfilePageHeader />
+        <LandingPageHeader />
         <div className="section">
           <Container>
             <h3 className="title mt-0 pt-0">Available Items (6)</h3>
             <h5 className="description mb-3">
-            Items you have made available to borrow
+              Items you have made available to borrow
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
-                <Button color="info" className="text-right" href='/profile-page'>
+                <Button
+                  color="info"
+                  className="text-right"
+                  href="/profile-page"
+                >
                   « Back to profile
                 </Button>
                 <CardDeck>
-                  <Card className="mb-4" style={{ 'min-width': '15rem' }}>
+                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
                     <CardImg
                       top
                       width="100%"
@@ -72,17 +83,14 @@ const ProductDetail = (props) => {
                     />
                     <CardBody>
                       <CardTitle style={{ fontWeight: 'Bold' }}>
-                        Brand new lawn mower
+                        {offer.title}
                       </CardTitle>
-                      <CardText>
-                        This lawn mower is a good as new and works perfectly,
-                        feel free to contact me with any questions!
+                      <CardText>{offer.description}</CardText>
+                      <CardText style={{ fontSize: '14px' }}>
+                        {offer.location?.city}, {offer.location?.country}
                       </CardText>
                       <CardText style={{ fontSize: '14px' }}>
-                        Located at - Chippendale
-                      </CardText>
-                      <CardText style={{ fontSize: '14px' }}>
-                        Category - Hardware
+                        {offer.category?.description}
                       </CardText>
                       <Button color="warning">Update Item</Button>
                     </CardBody>
@@ -91,19 +99,20 @@ const ProductDetail = (props) => {
               </Col>
             </Row>
           </Container>
+
           <Container>
-            <h3 className="title">Requested Items (3)</h3>
+            <h3 className="title">Similar Items (3)</h3>
             <h5 className="description">Items you are looking to borrow</h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
                 <CardDeck>
-                  <Card className="mb-4" style={{ 'min-width': '15rem' }}>
+                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
                     <CardBody>
                       <CardTitle>Torch</CardTitle>
                       <CardText>Looking for a big ol' torch</CardText>
                     </CardBody>
                   </Card>
-                  <Card className="mb-4" style={{ 'min-width': '15rem' }}>
+                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
                     <CardBody>
                       <CardTitle>Racing Bike</CardTitle>
                       <CardText>
@@ -112,7 +121,7 @@ const ProductDetail = (props) => {
                       </CardText>
                     </CardBody>
                   </Card>
-                  <Card className="mb-4" style={{ 'min-width': '15rem' }}>
+                  <Card className="mb-4" style={{ minWidth: '15rem' }}>
                     <CardBody>
                       <CardTitle>Screwdriver</CardTitle>
                       <CardText>
