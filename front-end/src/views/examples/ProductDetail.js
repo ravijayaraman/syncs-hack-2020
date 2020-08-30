@@ -90,7 +90,7 @@ const ProductDetail = (props) => {
                         {offer.location?.city}, {offer.location?.country}
                       </CardText>
                       <CardText style={{ fontSize: '14px' }}>
-                        {offer.category}
+                        {offer.category?.description}
                       </CardText>
                       <Button color="warning">Update Item</Button>
                     </CardBody>
