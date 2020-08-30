@@ -63,7 +63,7 @@ function ProfilePage() {
   //   console.log(data)
   //   setUser(data);
   // });
-
+  
   return (
     <> 
       <ExamplesNavbar />

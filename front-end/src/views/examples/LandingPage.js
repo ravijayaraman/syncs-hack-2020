@@ -62,6 +62,8 @@ const LandingPage = (props) => {
     };
   }, []);
 
+
+
   //Workflow
   //1. create state and method using useState
   //2. Fetch on load. using useEffect
@@ -82,7 +84,7 @@ const LandingPage = (props) => {
                   {offers.map((offer) => (
                     <OfferCard
                       id={offer.id}
-                      photo={offer.photo}
+                      photo={offer.photo}      
                       title={offer.title}
                       description={offer.description}
                     />
