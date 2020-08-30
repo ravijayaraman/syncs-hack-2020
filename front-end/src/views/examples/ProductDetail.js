@@ -53,12 +53,15 @@ const ProductDetail = (props) => {
         <ProfilePageHeader />
         <div className="section">
           <Container>
-            <h3 className="title">Available Items (6)</h3>
-            <h5 className="description">
-              Items you can rent or borrow from Ryan
+            <h3 className="title mt-0 pt-0">Available Items (6)</h3>
+            <h5 className="description mb-3">
+            Items you have made available to borrow
             </h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
+                <Button color="info" className="text-right" href='/profile-page'>
+                  « Back to profile
+                </Button>
                 <CardDeck>
                   <Card className="mb-4" style={{ 'min-width': '15rem' }}>
                     <CardImg
@@ -81,7 +84,7 @@ const ProductDetail = (props) => {
                       <CardText style={{ fontSize: '14px' }}>
                         Category - Hardware
                       </CardText>
-                      <Button color="success">Confirm Request</Button>
+                      <Button color="warning">Update Item</Button>
                     </CardBody>
                   </Card>
                 </CardDeck>
@@ -90,7 +93,7 @@ const ProductDetail = (props) => {
           </Container>
           <Container>
             <h3 className="title">Requested Items (3)</h3>
-            <h5 className="description">Items Ryan is looking for</h5>
+            <h5 className="description">Items you are looking to borrow</h5>
             <Row>
               <Col className="ml-auto mr-auto" md="10">
                 <CardDeck>
@@ -98,7 +101,6 @@ const ProductDetail = (props) => {
                     <CardBody>
                       <CardTitle>Torch</CardTitle>
                       <CardText>Looking for a big ol' torch</CardText>
-                      <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{ 'min-width': '15rem' }}>
@@ -108,7 +110,6 @@ const ProductDetail = (props) => {
                         I am looking for a racing bike, preferably one I could
                         go real fast with
                       </CardText>
-                      <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
                   <Card className="mb-4" style={{ 'min-width': '15rem' }}>
@@ -119,7 +120,6 @@ const ProductDetail = (props) => {
                         constructing the birdhouse I have been making during the
                         last few months in isolation
                       </CardText>
-                      <Button color="info">Lend Item</Button>
                     </CardBody>
                   </Card>
                 </CardDeck>
