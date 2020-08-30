@@ -32,6 +32,7 @@ import {
   Label,
   FormText,
 } from 'reactstrap';
+import { useHistory } from 'react-router-dom';
 
 // core components
 import ExamplesNavbar from 'components/Navbars/ExamplesNavbar.js';
@@ -41,6 +42,8 @@ import axios from 'axios';
 import { getToken } from 'services/AuthService';
 
 function CreateOffer() {
+  const history = useHistory();
+
   const API = 'http://localhost:5000/api/v1';
 
   const [pills, setPills] = React.useState('2');
@@ -81,6 +84,8 @@ function CreateOffer() {
       user: 1,
       category: category,
       address: 'location',
+      photo:
+        'https://images.unsplash.com/photo-1589805164671-2650aaf9bcee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
     };
 
     const obj = getToken();
@@ -92,6 +97,10 @@ function CreateOffer() {
     axios
       .post(`${API}/categories/${category}/offers`, data, config)
       .then((resp) => {
+        const id = resp.data.data._id;
+        history.push('/prod-detail/' + id);
+
+        // <Redirect to= />
         console.log(resp);
       });
 
